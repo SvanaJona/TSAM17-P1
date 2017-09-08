@@ -7,10 +7,10 @@ LDLIBS =
 
 .DEFAULT: all
 .PHONY: all
-all: ex
+all: tftpd
 
 clean:
 	rm -f *.o
 
 distclean: clean
-	rm -f ex
+	rm -f tftpd
