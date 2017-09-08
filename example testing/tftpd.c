@@ -16,6 +16,8 @@ int main(int argc, char *argv[])
     //printing how many arguments
     printf("how many arguments: ");
     printf("%d\n", argc);
+    printf("inside of character: ");
+    printf("%c\n", *argc[1]);
 
     // Create and bind a UDP socket.
     sockfd = socket(AF_INET, SOCK_DGRAM, 0);
