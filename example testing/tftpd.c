@@ -13,6 +13,8 @@ int main(int argc, char *argv[])
     struct sockaddr_in server, client;
     char message[512];
 
+    printf("%d\n", n);
+
     // Create and bind a UDP socket.
     sockfd = socket(AF_INET, SOCK_DGRAM, 0);
     memset(&server, 0, sizeof(server));
