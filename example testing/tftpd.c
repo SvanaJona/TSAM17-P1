@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
     struct sockaddr_in server, client;
     char message[512];
 
+    //printing how many arguments
     printf("how many arguments: ");
     printf("%d\n", argc);
 
