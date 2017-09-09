@@ -18,7 +18,9 @@ int main(int argc, char *argv[])
     printf("%d\n", argc);
     //printing what is in argument one
     printf("inside of character: ");
-    printf("%s\n", argv[0]);
+    printf("%d\n", argv[1]);
+
+    int serverPort = argv[1];
 
     // Create and bind a UDP socket.
     sockfd = socket(AF_INET, SOCK_DGRAM, 0);
@@ -28,7 +30,7 @@ int main(int argc, char *argv[])
     // Network functions need arguments in network byte order instead
     // of host byte order. The macros htonl, htons convert the values.
     server.sin_addr.s_addr = htonl(INADDR_ANY);
-    server.sin_port = htons(63413);
+    server.sin_port = htons(serverPort);
     bind(sockfd, (struct sockaddr *) &server, (socklen_t) sizeof(server));
 
     for (;;) {
