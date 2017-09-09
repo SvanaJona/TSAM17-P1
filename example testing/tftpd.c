@@ -6,6 +6,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[])
 {
@@ -18,9 +19,13 @@ int main(int argc, char *argv[])
     printf("%d\n", argc);
     //printing what is in argument one
     printf("inside of character: ");
-    printf("%d\n", argv[1]);
-
-    int serverPort = argv[1];
+    printf("%s\n", argv[1]);
+    //Convert port number to integer value
+    char *p;
+    long number = strtol(argv[1], &p, 10);
+    int serverPort = number;
+    printf("Server port is : ");
+    printf("%d\n", serverPort);
 
     // Create and bind a UDP socket.
     sockfd = socket(AF_INET, SOCK_DGRAM, 0);
