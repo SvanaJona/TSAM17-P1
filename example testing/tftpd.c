@@ -14,9 +14,10 @@ int main(int argc, char *argv[])
     struct sockaddr_in server, client;
     char message[512];
 
-    //printing how many arguments
-    printf("how many arguments: ");
-    printf("%d\n", argc);
+    int argCounter = argc;
+    if (argCounter < 2){
+	printf("you must have forgot to add the server port number");
+    }
     //printing what is in argument one
     printf("inside of character: ");
     printf("%s\n", argv[1]);
