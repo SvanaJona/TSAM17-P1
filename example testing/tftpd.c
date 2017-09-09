@@ -9,15 +9,16 @@
 
 int main(int argc, char *argv[])
 {
-	int sockfd;
+    int sockfd;
     struct sockaddr_in server, client;
     char message[512];
 
     //printing how many arguments
     printf("how many arguments: ");
     printf("%d\n", argc);
+    //printing what is in argument one
     printf("inside of character: ");
-    printf("%c\n", *argc[1]);
+    printf("%s\n", argv[1]);
 
     // Create and bind a UDP socket.
     sockfd = socket(AF_INET, SOCK_DGRAM, 0);
