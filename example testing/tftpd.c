@@ -42,8 +42,6 @@ int main(int argc, char *argv[])
     server.sin_port = htons(serverPort);
     bind(sockfd, (struct sockaddr *) &server, (socklen_t) sizeof(server));
 
-    listenPort(sockfd, 5);
-
     connect(sockfd, (struct sockaddr *)&server, sizeof(struct sockaddr_in));
 
     url = recv(sockfd, message, MAX, 0);
