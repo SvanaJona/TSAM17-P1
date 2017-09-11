@@ -8,11 +8,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MAX 512
+
 int main(int argc, char *argv[])
 {
     int sockfd, url;
     struct sockaddr_in server, client;
-    char message[512];
+    char message[MAX];
 
     int argCounter = argc;
     if (argCounter < 2){
@@ -44,7 +46,7 @@ int main(int argc, char *argv[])
 
     connect(sockfd, (struct sockaddr2 *)&server, sizeof(struct sockaddr_in));
 
-    url = recv(sockfd, message, 0);
+    url = recv(sockfd, message, MAX, 0);
 
     message[url] = '\0';
 
