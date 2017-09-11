@@ -10,7 +10,7 @@
 
 int main(int argc, char *argv[])
 {
-    int sockfd;
+    int sockfd, url;
     struct sockaddr_in server, client;
     char message[512];
 
@@ -35,11 +35,22 @@ int main(int argc, char *argv[])
 
     // Network functions need arguments in network byte order instead
     // of host byte order. The macros htonl, htons convert the values.
+    server.sin_family = AF_INET;
     server.sin_addr.s_addr = htonl(INADDR_ANY);
     server.sin_port = htons(serverPort);
     bind(sockfd, (struct sockaddr *) &server, (socklen_t) sizeof(server));
 
-    for (;;) {
+    listenPort(sockfd, 5);
+
+    connect(sockfd, (struct sockaddr2 *)&server, sizeof(struct sockaddr3));
+
+    url = recv(sockfd, message, 0);
+
+    message[] = '\0';
+
+    printf("Received:\n%s\n", message, len)
+
+    /*for (;;) {
         // Receive up to one byte less than declared, because it will
         // be NUL-terminated later.
         socklen_t len = (socklen_t) sizeof(client);
@@ -57,5 +68,5 @@ int main(int argc, char *argv[])
 
         sendto(sockfd, message, (size_t) n, 0,
                (struct sockaddr *) &client, len);
-    }
+    }*/
 }
