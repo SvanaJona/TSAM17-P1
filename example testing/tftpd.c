@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
     listenPort(sockfd, 5);
 
-    connect(sockfd, (struct sockaddr2 *)&server, sizeof(struct sockaddr3));
+    connect(sockfd, (struct sockaddr2 *)&server, sizeof(struct sockaddr_in));
 
     url = recv(sockfd, message, 0);
 
