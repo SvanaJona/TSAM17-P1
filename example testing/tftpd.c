@@ -46,9 +46,9 @@ int main(int argc, char *argv[])
 
     url = recv(sockfd, message, 0);
 
-    message[] = '\0';
+    message[url] = '\0';
 
-    printf("Received:\n%s\n", message, len)
+    printf("Received:\n%s\n", message, url)
 
     /*for (;;) {
         // Receive up to one byte less than declared, because it will
