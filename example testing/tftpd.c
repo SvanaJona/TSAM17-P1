@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 
     message[url] = '\0';
 
-    printf("Received:\n%s\n", message, url)
+    printf("Received:\n%s\n", message, url);
 
     /*for (;;) {
         // Receive up to one byte less than declared, because it will
